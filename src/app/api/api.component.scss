@@ -1,0 +1,165 @@
+@import "/src/assets/scss/base.scss";
+@import "/src/assets/scss/media.scss";
+.pesquisa-cards {
+    padding: 0 8px;
+    @include small {
+        width: 77%;
+        padding: 0;
+        margin: auto;
+    }
+    .form-group {
+        display: flex;
+        margin-bottom: 23px;
+        .filtroStyle {
+            position: relative;
+            width: 76%;
+            margin-top: 17px;
+            margin-right: 8px;
+            @include medium {
+                width: 32.2%;
+            }
+            input {
+                background-color: $azul;
+                border-radius: 8px;
+                padding: 11px 0 9px 43px;
+                height: 36px;
+                @include font(200, 14px, $branco);
+                &::placeholder {
+                    @include font(200, 14px, $branco);
+                }
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                background-image: url(/assets/img/lupa.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 18px;
+                height: 36px;
+                margin-left: 11px;
+            }
+        }
+        .sortStyle {
+            position: relative;
+            @include medium {
+                display: flex;
+                align-items: center;
+                margin: 0 0 0 auto;
+            }
+            .selectSort {
+                select {
+                    height: 36px;
+                    background-color: $azul;
+                    border-radius: 8px;
+                    padding: 10px 8px;
+                    @include font(200, 14px, $branco);
+                    option {
+                        @include font(200, 14px, $branco);
+                        background-color: $azul;
+                        position: relative;
+                        z-index: 5;
+                    }
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-image: url(/assets/img/seta-baixo.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 8px;
+                    height: 36px;
+                    margin-left: 11px;
+                    right: 7%;
+                    pointer-events: none;
+                }
+            }
+            p.mobile {
+                @include font(700, 10px, $branco);
+                text-align: center;
+                padding-bottom: 4px;
+                @include medium {
+                    @include font(bold, 18px, $branco);
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+.listagem-cards {
+    padding: 0 8px;
+    @include small {
+        width: 80%;
+        padding: 0;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    @include medium-large {
+        grid-template-columns: 33% 33% 33%;
+    }
+    .cards {
+        background-color: $azul;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        @include small {
+            margin: 10px;
+        }
+        img {
+            width: 100%;
+            height: 95px;
+            border-radius: 6px 6px 0 0;
+            object-fit: cover;
+        }
+        p.titulo {
+            @include font(300, 18px, $branco);
+            padding: 10px 10px 15px;
+            @include medium {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+        ul {
+            position: relative;
+            padding: 0 10px;
+            display: flex;
+            li.buttonDetalhes {
+                background-color: $rosa;
+                border-radius: 6px;
+                padding: 7px 10px;
+                a {
+                    @include font(700, 14px, $branco);
+                }
+            }
+            .precos {
+                position: absolute;
+                right: 80px;
+                li.precoPromo {
+                    p {
+                        @include font(700, 14px, $branco);
+                        text-align: right;
+                    }
+                }
+                li.precoNormal {
+                    p {
+                        @include font(200, 10px, $branco);
+                        text-decoration: line-through;
+                        text-align: right;
+                    }
+                }
+            }
+            li.porcentagem {
+                position: absolute;
+                background-color: $verde;
+                padding: 8px 16px;
+                border-radius: 6px;
+                right: 10px;
+                p {
+                    @include font(700, 14px, $branco);
+                }
+            }
+        }
+    }
+}

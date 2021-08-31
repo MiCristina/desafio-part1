@@ -1,0 +1,5 @@
+<h1>Ofertas</h1>
+
+<app-api [products]="products | sortPipe123: filter.sort" (setFilters)="filter = $event"></app-api>
+
+<router-outlet></router-outlet>

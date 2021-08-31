@@ -1,0 +1,104 @@
+// --------------- FONT --------------- //
+@font-face {
+    font-family: 'roboto';
+    src: url('/assets/font/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// --------------- VAR --------------- //
+$font: 'roboto';
+$azul: #0B1641;
+$rosa: #C70160;
+$verde: #16857B;
+$branco: #fff;
+$gradient: linear-gradient(45deg,
+$azul 0%,
+$rosa 100%);
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+    border: 0 none;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+html {
+    width: 100%;
+    font-size: 1rem;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    // color: $cor_n_Xxescuro;
+    // font-family: $font-regular;
+}
+
+span {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    &.img-real-size {
+        max-width: inherit;
+        height: auto;
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+input {
+    &[type="text"] {
+        width: 100%;
+    }
+}
+
+select {
+    width: 100%;
+    -webkit-appearance: none;
+    /* Remove estilo padrão do Chrome */
+    -moz-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    appearance: none;
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+// --------------- MIXIN --------------- //
+@mixin font($weight,
+$size,
+$color) {
+    font-family: $font;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}

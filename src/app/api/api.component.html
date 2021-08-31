@@ -1,0 +1,41 @@
+<section class="pesquisa-cards">
+    <div class="form-group">
+        <article class="filtroStyle">
+            <input type="text" class="form-group" placeholder="Procurar" [(ngModel)]=searchPipe>
+        </article>
+        <article class="sortStyle">
+            <p class="mobile">Ordernar por</p>
+            <div class="selectSort">
+                <select class="form-select" [(ngModel)]=sortPipe>
+                  <option value="desconto" selected>% de Desconto</option>
+                  <option value="asc">Price Ascending</option>
+                  <option value="desc">Price Descending teste</option>
+                  <option value="tituloAlf">titulo</option>
+                  <option *ngFor="let item of cards" disabled hidden></option>
+                </select>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="listagem-cards">
+    <div class="cards" *ngFor="let item of cards | filterPipe123: searchPipe | sortPipe123: sortPipe">
+        <img src="https://cdn.akamai.steamstatic.com/steam/apps/{{item.steamAppID}}//header.jpg" alt="">
+        <p class="titulo">{{item.title}}</p>
+        <ul>
+            <li class="buttonDetalhes"><a href="#">DETALHES</a></li>
+            <li class="precos">
+                <ol>
+                    <li class="precoNormal">
+                        <p>$ {{item.normalPrice}}</p>
+                    </li>
+                    <li class="precoPromo">
+                        <p>$ {{item.salePrice}}</p>
+                    </li>
+                </ol>
+            </li>
+            <li class="porcentagem">
+                <p>-{{item.savings | number : '1.0-0'}}%</p>
+            </li>
+        </ul>
+    </div>
+</section>
