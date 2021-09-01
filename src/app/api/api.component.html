@@ -8,9 +8,9 @@
             <div class="selectSort">
                 <select class="form-select" [(ngModel)]=sortPipe>
                   <option value="desconto" selected>% de Desconto</option>
-                  <option value="asc">Price Ascending</option>
-                  <option value="desc">Price Descending teste</option>
-                  <option value="tituloAlf">titulo</option>
+                  <option value="asc">Maior preço</option>
+                  <option value="desc">Menor preço</option>
+                  <option value="tituloAlf">Título</option>
                   <option *ngFor="let item of cards" disabled hidden></option>
                 </select>
             </div>
